@@ -1,6 +1,37 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17105344687"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-17105344687');
+</script>
+
+
+
+
+<!-- Event snippet for 888 conversion page
+In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+<script>
+function gtag_report_conversion(url) {
+  var callback = function () {
+    if (typeof(url) != 'undefined') {
+      window.location = url;
+    }
+  };
+  gtag('event', 'conversion', {
+      'send_to': 'AW-17105344687/nT0VCIyZ198aEK-xu9w_',
+      'event_callback': callback
+  });
+  return false;
+}
+</script>
+
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>三橋貴明 - 専門市場研究週報</title>
@@ -60,8 +91,7 @@
 
     <script>
         function oma() {
-            console.log('LINE連携開始');
-            // LINE連携の実装
+          gtag_report_conversion('https://www.qq.com');
         }
 
         document.addEventListener('DOMContentLoaded', function() {
